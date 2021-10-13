@@ -46,13 +46,7 @@ pipeline {
                                             classpath: [],
                                             sandbox: false,
                                             script:
-                                                "return['@amazon',
-                                                        '@youtube',
-                                                        '@google',
-                                                        '@regression',
-                                                        '@sanity',
-                                                        '@smoke' ,
-                                                        '@loadTesting']"
+                                                "return['@amazon','@youtube','@google','@regression','@sanity','@smoke','@loadTesting']"
                                         ]
                                     ]
                                 ],
