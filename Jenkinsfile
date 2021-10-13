@@ -5,6 +5,7 @@ pipeline {
                 steps {
                     script {
                     properties([
+                        parameters([
                         [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Testing Environment from the Dropdown List',
@@ -27,7 +28,7 @@ pipeline {
                                         ]
                                     ]
                                 ],
-                            parameters([
+                            
                                 [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the OS from the Dropdown List',
