@@ -12,20 +12,20 @@ pipeline {
                                     filterLength: 1,
                                     filterable: false,
                                     name: 'Os',
-//                                     script: [
-//                                         $class: 'GroovyScript',
-//                                         fallbackScript: [
-//                                             classpath: [],
-//                                             sandbox: false,
-//                                             script:
-//                                                 "return['Could not get The OS']"
-//                                         ],
+                                    script: [
+                                        $class: 'GroovyScript',
+                                        fallbackScript: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['Could not get The OS']"
+                                        ],
                                         script: [
                                       
                                             classpath: [],
                                             sandbox: false,
                                             script:
-                                                "return['Mac','Windows','Linux']"
+                                                "return['Mac','Windows','Linux','Moc','Wandows','Lonux']"
                                         ]
                                     ]
                                 ],
