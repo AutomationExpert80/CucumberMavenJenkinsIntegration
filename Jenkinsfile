@@ -12,16 +12,16 @@ pipeline {
                                     filterLength: 1,
                                     filterable: false,
                                     name: 'Os',
-                                    script: [
-                                        $class: 'GroovyScript',
-                                        fallbackScript: [
-                                            classpath: [],
-                                            sandbox: false,
-                                            script:
-                                                "return['Could not get The OS']"
-                                        ],
+//                                     script: [
+//                                         $class: 'GroovyScript',
+//                                         fallbackScript: [
+//                                             classpath: [],
+//                                             sandbox: false,
+//                                             script:
+//                                                 "return['Could not get The OS']"
+//                                         ],
                                         script: [
-                                            $class: 'GroovyScript',
+                                      
                                             classpath: [],
                                             sandbox: false,
                                             script:
