@@ -5,6 +5,28 @@ pipeline {
                 steps {
                     script {
                     properties([
+                        [$class: 'ChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the Testing Environment from the Dropdown List',
+                                    filterLength: 1,
+                                    filterable: false,
+                                    name: 'TestingEnvironment',
+                                    script: [
+                                        $class: 'GroovyScript',
+                                        fallbackScript: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['Could not get The Testing Environment']"
+                                        ],
+                                        script: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['QA','DEV','STG','UAT']"
+                                        ]
+                                    ]
+                                ],
                             parameters([
                                 [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
@@ -25,7 +47,7 @@ pipeline {
                                             classpath: [],
                                             sandbox: false,
                                             script:
-                                                "return['Mac','Windows','Linux','Moc','Wandows','Lonux']"
+                                                "return['Mac','Windows','Linux']"
                                         ]
                                     ]
                                 ],
