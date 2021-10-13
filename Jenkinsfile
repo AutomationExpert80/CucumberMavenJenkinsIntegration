@@ -21,6 +21,7 @@ pipeline {
                                                 "return['Could not get The OS']"
                                         ],
                                         script: [
+                                            $class: 'GroovyScript',
                                             classpath: [],
                                             sandbox: false,
                                             script:
