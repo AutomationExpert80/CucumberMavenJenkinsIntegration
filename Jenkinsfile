@@ -28,7 +28,34 @@ pipeline {
                                         ]
                                     ]
                                 ],
-                            
+                        [$class: 'ChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the test suit using the corresponding Cucumber Tag from the Dropdown List',
+                                    filterLength: 1,
+                                    filterable: false,
+                                    name: 'CucumberTag',
+                                    script: [
+                                        $class: 'GroovyScript',
+                                        fallbackScript: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['Could not get The Cucumber Tag']"
+                                        ],
+                                        script: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['@amazon',
+                                                        '@youtube',
+                                                        '@google',
+                                                        '@regression',
+                                                        '@sanity',
+                                                        '@smoke' ,
+                                                        '@loadTesting']"
+                                        ]
+                                    ]
+                                ],
                                 [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the OS from the Dropdown List',
