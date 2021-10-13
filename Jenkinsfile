@@ -24,7 +24,7 @@ pipeline {
                                             classpath: [],
                                             sandbox: false,
                                             script:
-                                                "return['QA','DEV','STG','UAT']"
+                                                "return['QA','DEV','STG','UAT','Production']"
                                         ]
                                     ]
                                 ],
@@ -52,7 +52,7 @@ pipeline {
                                 ],
                                 [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
-                                    description: 'Select the OS from the Dropdown List',
+                                    description: 'Select the Operating System from the Dropdown List',
                                     filterLength: 1,
                                     filterable: false,
                                     name: 'Os',
@@ -62,7 +62,7 @@ pipeline {
                                             classpath: [],
                                             sandbox: false,
                                             script:
-                                                "return['Could not get The OS']"
+                                                "return['Could not get The Operating System']"
                                         ],
                                         script: [
                                       
@@ -75,7 +75,7 @@ pipeline {
                                 ],
                                 [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
-                                    description: 'Select the Os_Version from the Dropdown List',
+                                    description: 'Select the Operating System Version from the Dropdown List',
                                     name: 'Os_Version',
                                     referencedParameters: 'Os',
                                     script:
@@ -83,20 +83,20 @@ pipeline {
                                         fallbackScript: [
                                                 classpath: [],
                                                 sandbox: false,
-                                                script: "return['Could not get Os from Os Param']"
+                                                script: "return['Could not get Operating System Version']"
                                                 ],
                                         script: [
                                                 classpath: [],
                                                 sandbox: false,
                                                 script: '''
                                                 if (Os.equals("Mac")){
-                                                    return["Big Sur", "Catalina", "MyMac"]
+                                                    return["macOS 12(Monterey)", "macOS 11(Big Sur)", "macOS 10.15(Catalina)","macOS 10.14(Mojave)","macOS 10.13(High Sierra)","macOS 10.12(Sierra)","OS X 10.11(El Capitan)"]
                                                 }
                                                 else if(Os.equals("Windows")){
-                                                    return["Windows_11", "Windows_10", "Windows_7"]
+                                                    return["Windows 11", "Windows 10", "Windows 7","Windows 8","Windows XP","Windows Vista","Windows 2000","Windows ME","Windows 98"]
                                                 }
                                                 else if(Os.equals("Linux")){
-                                                    return["Obunto", "MylUNIX", "MYuNIX"]
+                                                    return["Debian Linux", "Gentoo Linux", "Ubuntu Linux","Linux Mint Desktop","RHEL Linux Distribution","CentOS Linux Distribution","Fedora Linux Distribution","Kali Linux Distribution"]
                                                 }
                                                 '''
                                             ]
