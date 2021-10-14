@@ -101,7 +101,6 @@ pipeline {
                                                 '''
                                             ]
                                     ]
-                              
                                 ],
                                 [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
@@ -120,13 +119,13 @@ pipeline {
                                                 sandbox: false,
                                                 script: '''
                                                 if (Os.equals("Mac")){
-                                                    return['Chrome','Edge','Safari','Opera','Firefox']
+                                                    return["Chrome","Edge","Safari","Opera","Firefox"]
                                                 }
                                                 else if(Os.equals("Windows")){
-                                                    return['Chrome','Internet Explorer','Edge','Safari','Opera','Firefox']
+                                                    return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
                                                 }
                                                 else if(Os.equals("Linux")){
-                                                    return['Chrome','Edge','Safari','Opera','Firefox']
+                                                    return["Chrome","Edge","Safari","Opera","Firefox"]
                                                 }
                                                 '''
                                             ]
