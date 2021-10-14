@@ -102,17 +102,18 @@ pipeline {
                                             ]
                                     ]
                                 ],
-                                [$class: 'DynamicReferenceParameter',
+                            
+                                [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Browser Name from the Dropdown List',
-                                    name: 'BrowserName',
+                                    name: 'Browser_Name',
                                     referencedParameters: 'Os',
                                     script:
                                         [$class: 'GroovyScript',
                                         fallbackScript: [
                                                 classpath: [],
                                                 sandbox: false,
-                                                script: "return['Could not get the Browser Name']"
+                                                script: "return['Could not get Browser Name']"
                                                 ],
                                         script: [
                                                 classpath: [],
@@ -129,11 +130,52 @@ pipeline {
                                                 }
                                                 '''
                                             ]
+                                    ]
+                                ]
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+//                                 [$class: 'DynamicReferenceParameter',
+//                                     choiceType: 'PT_SINGLE_SELECT',
+//                                     description: 'Select the Browser Name from the Dropdown List',
+//                                     name: 'BrowserName',
+//                                     referencedParameters: 'Os',
+//                                     script:
+//                                         [$class: 'GroovyScript',
+//                                         fallbackScript: [
+//                                                 classpath: [],
+//                                                 sandbox: false,
+//                                                 script: "return['Could not get the Browser Name']"
+//                                                 ],
+//                                         script: [
+//                                                 classpath: [],
+//                                                 sandbox: false,
+//                                                 script: '''
+//                                                 if (Os.equals("Mac")){
+//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
+//                                                 }
+//                                                 else if(Os.equals("Windows")){
+//                                                     return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
+//                                                 }
+//                                                 else if(Os.equals("Linux")){
+//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
+//                                                 }
+//                                                 '''
+//                                             ]
 
-                                       ]
-                                 ]
+//                                        ]
+//                                  ]
                               
- //                             ],
+//  //                             ],
 //                                 [$class: 'DynamicReferenceParameter',
 //                                     choiceType: 'ET_ORDERED_LIST',
 //                                     description: 'Select the  AMI based on the following infomration',
