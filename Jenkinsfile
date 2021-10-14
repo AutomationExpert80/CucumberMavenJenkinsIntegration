@@ -107,7 +107,7 @@ pipeline {
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Browser Name from the Dropdown List',
                                     name: 'Browser_Name',
-                                    referencedParameters: 'Os',
+                                    referencedParameters: 'Os,Os_Version',
                                     script:
                                         [$class: 'GroovyScript',
                                         fallbackScript: [
