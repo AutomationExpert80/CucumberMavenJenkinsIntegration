@@ -191,69 +191,13 @@ pipeline {
                                     ]
                             
                             
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-//                                 [$class: 'DynamicReferenceParameter',
-//                                     choiceType: 'PT_SINGLE_SELECT',
-//                                     description: 'Select the Browser Name from the Dropdown List',
-//                                     name: 'BrowserName',
-//                                     referencedParameters: 'Os',
-//                                     script:
-//                                         [$class: 'GroovyScript',
-//                                         fallbackScript: [
-//                                                 classpath: [],
-//                                                 sandbox: false,
-//                                                 script: "return['Could not get the Browser Name']"
-//                                                 ],
-//                                         script: [
-//                                                 classpath: [],
-//                                                 sandbox: false,
-//                                                 script: '''
-//                                                 if (Os.equals("Mac")){
-//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 else if(Os.equals("Windows")){
-//                                                     return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 else if(Os.equals("Linux")){
-//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 '''
-//                                             ]
+                       string(defaultValue: 'src/test/resources/secret.properties', description: 'Secret Properties Path', name: 'SecretFilePath')
 
-//                                        ]
-//                                  ]
-                              
-//  //                             ],
-//                                 [$class: 'DynamicReferenceParameter',
-//                                     choiceType: 'ET_ORDERED_LIST',
-//                                     description: 'Select the  AMI based on the following infomration',
-//                                     name: 'Image Information',
-//                                     referencedParameters: 'Os',
-//                                     script:
-//                                         [$class: 'GroovyScript',
-//                                         script: 'return["Could not get Os Information"]',
-//                                         script: [
-//                                             script: '''
-//                                                     if (Env.equals("dev")){
-//                                                         return["ami-sd2345sd:  AMI with Java", "ami-asdf245sdf: AMI with Python", "ami-asdf3245sd: AMI with Groovy"]
-//                                                     }
-//                                                     else if(Env.equals("stage")){
-//                                                         return["ami-sd34sdf:  AMI with Java", "ami-sdf345sdc: AMI with Python", "ami-sdf34sdf: AMI with Groovy"]
-//                                                     }
-//                                                     else if(Env.equals("prod")){
-//                                                         return["ami-sdf34sdf:  AMI with Java", "ami-sdf34ds: AMI with Python", "ami-sdf3sf3: AMI with Groovy"]
-//                                                     }
-//                                                     '''
-//                                                 ]
-//                                         ]
+                       string(defaultValue: '4', description: 'Implicitly wait time', name: 'ImplicitlyWaitTime')
+
+                       string(defaultValue: 'automationexpert80@gmail.com', description: 'email for notifications', name: 'notification_email')
+                            
+             
                                  ]
                             ])
                         ])
