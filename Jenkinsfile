@@ -102,7 +102,7 @@ pipeline {
                                             ]
                                     ]
                                 ],
-                                [$class: 'CascadeChoiceParameter',
+                                [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Browser Name from the Dropdown List',
                                     name: 'BrowserName',
