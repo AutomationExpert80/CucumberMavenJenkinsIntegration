@@ -103,7 +103,7 @@ pipeline {
                                     ]
                               ],
                             
-                                [$class: 'CascadeChoiceParameter',
+                              [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Browser Name from the Dropdown List',
                                     name: 'Browser_Name',
@@ -123,7 +123,7 @@ pipeline {
                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
                                                 }
                                                 else if(Os.equals("Windows")){
-                                                    return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
+                                                    return["Chrome","Internet Explorer","Edge","Opera","Firefox"]
                                                 }
                                                 else if(Os.equals("Linux")){
                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
