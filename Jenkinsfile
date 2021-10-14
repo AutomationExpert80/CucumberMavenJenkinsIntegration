@@ -73,35 +73,35 @@ pipeline {
                                         ]
                                     ]
                                 ],
-                                [$class: 'CascadeChoiceParameter',
-                                    choiceType: 'PT_SINGLE_SELECT',
-                                    description: 'Select the Operating System Version from the Dropdown List',
-                                    name: 'Os_Version',
-                                    referencedParameters: 'Os',
-                                    script:
-                                        [$class: 'GroovyScript',
-                                        fallbackScript: [
-                                                classpath: [],
-                                                sandbox: false,
-                                                script: "return['Could not get Operating System Version']"
-                                                ],
-                                        script: [
-                                                classpath: [],
-                                                sandbox: false,
-                                                script: '''
-                                                if (Os.equals("Mac")){
-                                                    return["macOS 12(Monterey)", "macOS 11(Big Sur)", "macOS 10.15(Catalina)","macOS 10.14(Mojave)","macOS 10.13(High Sierra)","macOS 10.12(Sierra)","OS X 10.11(El Capitan)"]
-                                                }
-                                                else if(Os.equals("Windows")){
-                                                    return["Windows 11", "Windows 10", "Windows 7","Windows 8","Windows XP","Windows Vista","Windows 2000","Windows ME","Windows 98"]
-                                                }
-                                                else if(Os.equals("Linux")){
-                                                    return["Debian Linux", "Gentoo Linux", "Ubuntu Linux","Linux Mint Desktop","RHEL Linux Distribution","CentOS Linux Distribution","Fedora Linux Distribution","Kali Linux Distribution"]
-                                                }
-                                                '''
-                                            ]
-                                    ]
-                                ],
+//                                 [$class: 'CascadeChoiceParameter',
+//                                     choiceType: 'PT_SINGLE_SELECT',
+//                                     description: 'Select the Operating System Version from the Dropdown List',
+//                                     name: 'Os_Version',
+//                                     referencedParameters: 'Os',
+//                                     script:
+//                                         [$class: 'GroovyScript',
+//                                         fallbackScript: [
+//                                                 classpath: [],
+//                                                 sandbox: false,
+//                                                 script: "return['Could not get Operating System Version']"
+//                                                 ],
+//                                         script: [
+//                                                 classpath: [],
+//                                                 sandbox: false,
+//                                                 script: '''
+//                                                 if (Os.equals("Mac")){
+//                                                     return["macOS 12(Monterey)", "macOS 11(Big Sur)", "macOS 10.15(Catalina)","macOS 10.14(Mojave)","macOS 10.13(High Sierra)","macOS 10.12(Sierra)","OS X 10.11(El Capitan)"]
+//                                                 }
+//                                                 else if(Os.equals("Windows")){
+//                                                     return["Windows 11", "Windows 10", "Windows 7","Windows 8","Windows XP","Windows Vista","Windows 2000","Windows ME","Windows 98"]
+//                                                 }
+//                                                 else if(Os.equals("Linux")){
+//                                                     return["Debian Linux", "Gentoo Linux", "Ubuntu Linux","Linux Mint Desktop","RHEL Linux Distribution","CentOS Linux Distribution","Fedora Linux Distribution","Kali Linux Distribution"]
+//                                                 }
+//                                                 '''
+//                                             ]
+//                                     ]
+//                                 ],
                             
                                 [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
