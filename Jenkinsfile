@@ -102,8 +102,8 @@ pipeline {
                                             ]
                                     ]
                               
-//                                 ],
-//                                 [$class: 'CascadeChoiceParameter',
+                                ],
+                                [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Browser Name from the Dropdown List',
                                     name: 'BrowserName',
@@ -133,7 +133,7 @@ pipeline {
                                     ]
                                  
                               
-                              ],
+ //                             ],
 //                                 [$class: 'DynamicReferenceParameter',
 //                                     choiceType: 'ET_ORDERED_LIST',
 //                                     description: 'Select the  AMI based on the following infomration',
