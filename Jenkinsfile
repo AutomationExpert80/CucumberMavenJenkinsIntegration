@@ -101,31 +101,7 @@ pipeline {
                                                 '''
                                             ]
                                     ]
-                                 
-                                 
-                                 
-                                 [$class: 'ChoiceParameter',
-                                    choiceType: 'PT_SINGLE_SELECT',
-                                    description: 'Select the Browser Name the Dropdown List',
-                                    filterLength: 1,
-                                    filterable: false,
-                                    name: 'BrowserName',
-                                    script: [
-                                        $class: 'GroovyScript',
-                                        fallbackScript: [
-                                            classpath: [],
-                                            sandbox: false,
-                                            script:
-                                                "return['Could not get The Browser Name']"
-                                        ],
-                                        script: [
-                                      
-                                            classpath: [],
-                                            sandbox: false,
-                                            script:
-                                                "return['Google Chrome','Internet Explorer','Microsoft Edge','Safari','Opera','Firefox','Baidu','Chromium','QQ','Samsung Browser']"
-                                        ]
-                                    ]
+                              
                                 ],
                                 [$class: 'CascadeChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
