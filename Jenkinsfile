@@ -132,7 +132,63 @@ pipeline {
                                             ]
                                     ]
 
-                            
+                            ],
+                            [$class: 'CascadeChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the Browser Version from the Dropdown List',
+                                    name: 'Browser_version',
+                                    referencedParameters: 'Os,Os_Version,Browser_Name',
+                                    script:
+                                        [$class: 'GroovyScript',
+                                        fallbackScript: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: "return['Could not get Browser version']"
+                                                ],
+                                        script: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: '''
+                                                if (Os.equals("Mac")){
+                                                    if(Browser_Name.equals("Chrome")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Edge")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Firefox")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Safari")){
+                                                    return["15","14","13","12","11","10","9"]
+                                                    }else if(Browser_Name.equals("Opera")){
+                                                    return["74","73","72","71","70","69","68"]}
+                                                    
+                                                }
+                                                else if(Os.equals("Windows")){
+                                                    if(Browser_Name.equals("Chrome")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Edge")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Firefox")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Internet Explorer")){
+                                                    return["11","10","9","8","7"]
+                                                    }else if(Browser_Name.equals("Opera")){
+                                                    return["74","73","72","71","70","69","68"]}
+                                                }
+                                                else if(Os.equals("Linux")){
+                                                    if(Browser_Name.equals("Chrome")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Edge")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Firefox")){
+                                                    return["97","96","95","94","93","92","91","90","89","88","87"]
+                                                    }else if(Browser_Name.equals("Safari")){
+                                                    return["15","14","13","12","11","10","9"]
+                                                    }else if(Browser_Name.equals("Opera")){
+                                                    return["74","73","72","71","70","69","68"]}
+                                                }
+                                                '''
+                                            ]
+                                    ]
                             
                             
                             
