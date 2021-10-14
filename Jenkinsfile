@@ -100,38 +100,38 @@ pipeline {
                                                 }
                                                 '''
                                             ]
-                                    ]
+                                    ],
   //                             ],
                             
-//                                 [$class: 'CascadeChoiceParameter',
-//                                     choiceType: 'PT_SINGLE_SELECT',
-//                                     description: 'Select the Browser Name from the Dropdown List',
-//                                     name: 'Browser_Name',
-//                                     referencedParameters: 'Os',
-//                                     script:
-//                                         [$class: 'GroovyScript',
-//                                         fallbackScript: [
-//                                                 classpath: [],
-//                                                 sandbox: false,
-//                                                 script: "return['Could not get Browser Name']"
-//                                                 ],
-//                                         script: [
-//                                                 classpath: [],
-//                                                 sandbox: false,
-//                                                 script: '''
-//                                                 if (Os.equals("Mac")){
-//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 else if(Os.equals("Windows")){
-//                                                     return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 else if(Os.equals("Linux")){
-//                                                     return["Chrome","Edge","Safari","Opera","Firefox"]
-//                                                 }
-//                                                 '''
-//                                             ]
-//                                     ]
-//                                 ]
+                                [$class: 'CascadeChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the Browser Name from the Dropdown List',
+                                    name: 'Browser_Name',
+                                    referencedParameters: 'Os',
+                                    script:
+                                        [$class: 'GroovyScript',
+                                        fallbackScript: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: "return['Could not get Browser Name']"
+                                                ],
+                                        script: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: '''
+                                                if (Os.equals("Mac")){
+                                                    return["Chrome","Edge","Safari","Opera","Firefox"]
+                                                }
+                                                else if(Os.equals("Windows")){
+                                                    return["Chrome","Internet Explorer","Edge","Safari","Opera","Firefox"]
+                                                }
+                                                else if(Os.equals("Linux")){
+                                                    return["Chrome","Edge","Safari","Opera","Firefox"]
+                                                }
+                                                '''
+                                            ]
+                                    ]
+
                             
                             
                             
