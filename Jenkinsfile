@@ -188,17 +188,16 @@ pipeline {
                                                 }
                                                 '''
                                             ]
-                                    ]
-                            
-                            
-                       string(defaultValue: 'src/test/resources/secret.properties', description: 'Secret Properties Path', name: 'SecretFilePath')
+                                     ]
 
-                       string(defaultValue: '4', description: 'Implicitly wait time', name: 'ImplicitlyWaitTime')
-
-                       string(defaultValue: 'automationexpert80@gmail.com', description: 'email for notifications', name: 'notification_email')
-                            
-             
                                  ]
+                            
+                            
+                            string(defaultValue: 'src/test/resources/secret.properties', description: 'Secret Properties Path', name: 'SecretFilePath')
+
+                            string(defaultValue: '4', description: 'Implicitly wait time', name: 'ImplicitlyWaitTime')
+
+                            string(defaultValue: 'automationexpert80@gmail.com', description: 'email for notifications', name: 'notification_email')
                             ])
                         ])
                     }
